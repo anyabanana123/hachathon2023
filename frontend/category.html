@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--    Подключение сторонних библиотек/фреймворков-->
+  <link rel="stylesheet" href="styles/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <!--    Подключение наших стилей-->
+  <link href="styles/filtr.css" rel="stylesheet">
+  <title></title>
+</head>
+<body>
+
+
+<!--Header нашей страницы-->
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container">
+    <a href="#" class="navbar-brand">Стимул</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a href="#" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Категории</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Что то там</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Что то там</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Конец Header страницы-->
+
+  <section>
+    <ul>
+      <li class="list active" data-filter="all">Все</li>
+      <li class="list" data-filter="wolfik">Вулфик</li>
+      <li class="list" data-filter="qwerty">Йцукен</li>
+    </ul>
+<!--    <div class="product">-->
+<!--      <div class="itemBox wolfik"><img src="images/1.jpeg" alt=""></div>-->
+<!--      <div class="itemBox qwerty"><img src="images/2.jpg" alt=""></div>-->
+<!--      <div class="itemBox wolfik"><img src="images/1.jpeg" alt=""></div>-->
+<!--      <div class="itemBox qwerty"><img src="images/2.jpg" alt=""></div>-->
+<!--    </div>-->
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 py-2 wolfik itemBox">
+          <div class="card">
+            <img src="images/2.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Qwerty</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+                cum. Nobis obcaecati magni impedit eaque quaerat id consectetur omnis ipsam laudantium,
+                amet excepturi corrupti labore odit maiores sit explicabo recusandae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 py-2 qwerty itemBox">
+          <div class="card">
+            <img src="images/1.jpeg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Qwerty</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+                cum. Nobis obcaecati magni impedit eaque quaerat id consectetur omnis ipsam laudantium,
+                amet excepturi corrupti labore odit maiores sit explicabo recusandae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 py-2 wolfik itemBox">
+          <div class="card">
+            <img src="images/2.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Qwerty</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+                cum. Nobis obcaecati magni impedit eaque quaerat id consectetur omnis ipsam laudantium,
+                amet excepturi corrupti labore odit maiores sit explicabo recusandae.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+<script   src="https://code.jquery.com/jquery-3.6.4.js"   integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="   crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    $('.list').click(function(){
+      const value = $(this).attr('data-filter');
+      if(value == 'all'){
+        $('.itemBox').show('1000');
+      }
+      else{
+        $('.itemBox').not('.'+value).hide('1000');
+        $('.itemBox').filter('.'+value).show('1000');
+      }
+    })
+
+    $('.list').click(function(){
+      $(this).addClass('active').siblings().removeClass('active');
+    })
+  })
+</script>
+</body>
+</html>
