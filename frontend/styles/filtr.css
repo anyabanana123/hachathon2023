@@ -4,9 +4,9 @@
     box-sizing: border-box;
 }
 section{
-    padding: 20px;
+    /*padding: 20px;*/
     width: 1280px;
-    margin: 40px auto;
+    /*margin: 40px auto;*/
 }
 section ul{
     display: flex;
@@ -21,8 +21,7 @@ section ul li{
     cursor: pointer;
 }
 section ul li.active{
-    background: #0a53be;
-    color: #fff;
+    background: #EDE9E9;
 }
 .product{
     display: flex;
